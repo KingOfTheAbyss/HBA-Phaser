@@ -20,7 +20,7 @@ function preload(){
     game.load.image('grass:1x1', 'images/grass_1x1.png');
 
     // load the hero image=
-    game.load.image('hero', 'images/download.gif');
+    game.load.image('hero', 'images/mika-transparent.gif');
     game.load.audio('sfx:jump', 'audio/jump.wav');
     game.load.audio('sfx:coin', 'audio/coin.wav');
     game.load.audio('sfx:stomp', 'audio/stomp.wav');
@@ -107,7 +107,7 @@ function spawnPlatform(platform) {
 
 function spawnCharacters (data) {
     // spawn hero
-    hero = game.add.sprite(data.hero.x, data.hero.y, 'download');
+    hero = game.add.sprite(data.hero.x, data.hero.y, 'hero');
     hero.anchor.set(0.5, 0.5);
     //Make the main character use the physics engine for movement
     game.physics.enable(hero);
