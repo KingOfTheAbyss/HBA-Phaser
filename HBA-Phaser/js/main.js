@@ -10,6 +10,7 @@ function preload(){
     game.load.image('attack-on-titan-season-2-spring-2017', 'images/attack-on-titan-season-2-spring-2017.jpg');
     game.load.json('level:1', 'data/level01.json');
     game.load.json('level:0', 'data/level00.json');
+    game.load.json('level:2', 'data/level02.json');
     //spawn platform sprites
     game.load.image('ground', 'images/ground.png');
     game.load.image('grass:8x1', 'images/grass_8x1.png');
@@ -19,7 +20,7 @@ function preload(){
     game.load.image('grass:1x1', 'images/grass_1x1.png');
 
     // load the hero image=
-    game.load.image('hero', 'images/images.gif');
+    game.load.image('hero', 'images/download.gif');
     game.load.audio('sfx:jump', 'audio/jump.wav');
     game.load.audio('sfx:coin', 'audio/coin.wav');
     game.load.audio('sfx:stomp', 'audio/stomp.wav');
@@ -106,7 +107,7 @@ function spawnPlatform(platform) {
 
 function spawnCharacters (data) {
     // spawn hero
-    hero = game.add.sprite(data.hero.x, data.hero.y, 'hero');
+    hero = game.add.sprite(data.hero.x, data.hero.y, 'download');
     hero.anchor.set(0.5, 0.5);
     //Make the main character use the physics engine for movement
     game.physics.enable(hero);
@@ -263,10 +264,13 @@ function onHeroVsKey(hero, key){
     key.kill();
     hasKey = true;
 }
-
+ 
 function onHeroVsDoor(hero, door){
     sfxDoor.play();
     if (level === 0){
+        level = level + 1;
+    }
+    else if(level === 1){
         level = level + 1;
     }
     else {
