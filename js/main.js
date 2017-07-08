@@ -20,7 +20,7 @@ function preload(){
     game.load.image('grass:1x1', 'images/grass_1x1.png');
 
     // load the hero image=
-    game.load.image('hero', 'images/mika-transparent.gif');
+    game.load.image('hero', 'images/mika-transparent-2.gif');
     game.load.audio('sfx:jump', 'audio/jump.wav');
     game.load.audio('sfx:coin', 'audio/coin.wav');
     game.load.audio('sfx:stomp', 'audio/stomp.wav');
